@@ -1,0 +1,19 @@
+<ol class="todo-list" *ngIf="items$ as items; else elseBlock">
+  <li class="todo-item" *ngFor="let item of items">
+    <label class="item-label">
+      <input [checked]="item.payload.doc.data().done" (change)="update($event, item)" type="checkbox"
+        class="item-checkbox">
+    </label>
+    <span class="item-description">
+      {{ item.payload.doc.data().value }}
+    </span>
+    <button class="item-delete" (click)="delete(item)">
+      ❌
+    </button>
+  </li>
+</ol>
+<ng-template #elseBlock>
+  <div class="todo-loader">
+    <progress role="progressbar" class="todo-progress">Carregando…</progress>
+  </div>
+</ng-template>

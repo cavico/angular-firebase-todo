@@ -117,8 +117,16 @@
               "devServerTarget": "todo-firebase-angular:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
-    }},
-  "defaultProject": "todo-firebase-angular"
+    }
+  },
+  "defaultProject": "todo-firebase-angular",
+  "cli": {
+    "analytics": "4dd6e8d5-d284-4cc6-bae3-a16c9d21b91c"
+  }
 }

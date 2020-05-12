@@ -1,0 +1,13 @@
+.todo-auth {
+  border-top: 1px solid #9bf;
+}
+
+.todo-auth-data {
+  margin-left: 60px;
+  border-left: 1px solid #f90;
+  padding: 15px;
+}
+
+.todo-auth-button {
+  cursor: pointer;
+}

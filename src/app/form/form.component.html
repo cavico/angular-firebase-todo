@@ -1,0 +1,8 @@
+<form [formGroup]="itemForm" (ngSubmit)="onSubmit()" class="todo-form">
+  <fieldset [disabled]="isLoading" class="todo-fieldset">
+    <input name="value" formControlName="value" type="text" class="todo-input" placeholder="Adicionar nota">
+    <button class="todo-submit">
+      Salvar
+    </button>
+  </fieldset>
+</form>

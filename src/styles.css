@@ -1,1 +1,36 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border-width: 0;
+  font: lighter 1.2rem/1.61rem monospace;
+}
+
+*:focus {
+  outline: none;
+}
+
+strong {
+  font-weight: bold;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eee;
+}
+
+.todo {
+  background: #fff;
+  max-width: 650px;
+  width: 100%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  border: 1px solid #ccc;
+  position: relative;
+}

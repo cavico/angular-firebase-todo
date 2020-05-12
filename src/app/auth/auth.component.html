@@ -1,0 +1,13 @@
+<div class="todo-auth">
+  <div class="todo-auth-data">
+    <ng-container *ngIf="afAuth.user | async as user; else authBlock">
+      <strong>Notas de</strong>
+      <br>
+      {{ user.displayName }}
+      <button (click)="logout()" class="todo-auth-button">Sair</button>
+    </ng-container>
+    <ng-template #authBlock>
+      <button (click)="googleLogin()" class="todo-auth-button">Logar com o Google</button>
+    </ng-template>
+  </div>
+</div>
