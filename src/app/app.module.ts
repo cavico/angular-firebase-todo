@@ -13,7 +13,12 @@ import { AuthComponent } from './auth/auth.component';
 import { environment } from 'src/environments/environment';
 
 @NgModule({
-  declarations: [AppComponent, FormComponent, ListComponent, AuthComponent],
+  declarations: [
+    AppComponent,
+    FormComponent,
+    ListComponent,
+    AuthComponent
+  ],
   imports: [
     BrowserModule,
     FormsModule,

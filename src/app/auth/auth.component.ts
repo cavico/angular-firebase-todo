@@ -13,10 +13,18 @@ export class AuthComponent {
   ) {}
 
   googleLogin() {
-    this.afAuth.signInWithPopup(new auth.GoogleAuthProvider());
+    this.afAuth.signInWithPopup(new auth.GoogleAuthProvider()).then(
+      response => {
+        sessionStorage.setItem('uid', response.user.uid);
+      }
+    );
   }
 
   logout() {
-    this.afAuth.signOut();
+    this.afAuth.signOut().then(
+      () => {
+        sessionStorage.removeItem('uid');
+      }
+    );
   }
 }

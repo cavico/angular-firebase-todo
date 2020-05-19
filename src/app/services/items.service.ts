@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, DocumentReference } from '@angular/fire/firestore';
 import { Item } from 'src/app/common/interface';
-import { Observable } from 'rxjs';
 import { AngularFireAuth } from '@angular/fire/auth';
 
 @Injectable({
@@ -16,16 +15,12 @@ export class ItemsService {
     private afAuth: AngularFireAuth,
     private afs: AngularFirestore
   ) {
-    this.afAuth.user.subscribe(
-      user => {
-        this.uid = user.uid;
-      }
-    );
+    this.uid = sessionStorage.getItem('uid');
   }
 
   list() {
     return this.afs
-      .collection<Item>('items')
+      .collection<Item>('items', ref => ref.where('uid', '==', this.uid))
       .snapshotChanges();
   }
 
